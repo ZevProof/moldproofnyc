@@ -156,6 +156,8 @@
   }
   .ba-pair{display:grid;grid-template-columns:1fr 1fr;position:relative}
   .ba-pair img{aspect-ratio:1/1;object-fit:cover;width:100%;height:100%}
+  .ba-pair img.pos-left{object-position:12% center}
+  .ba-pair img.pos-top{object-position:center top}
   .ba-tag{
     position:absolute;top:12px;font-size:11px;font-weight:800;letter-spacing:.12em;
     text-transform:uppercase;color:#fff;padding:6px 14px;border-radius:999px;
@@ -375,8 +377,8 @@
     <div class="ba-grid">
       <div class="ba-card reveal">
         <div class="ba-pair">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Black_mold_in_a_building.JPG/960px-Black_mold_in_a_building.JPG" alt="Before: black mold growth spreading across a wall corner" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=75" alt="After: clean, healthy living space with spotless walls" loading="lazy">
+          <img class="pos-left" src="assets/before-room.jpg" alt="Before: black mold spreading across the ceiling corner and walls of a living space" loading="lazy">
+          <img class="pos-left" src="assets/after-room.jpg" alt="After: the same living space with clean, healthy walls" loading="lazy">
           <span class="ba-tag before">Before</span>
           <span class="ba-tag after">After</span>
           <span class="ba-arrow">→</span>
@@ -385,8 +387,8 @@
       </div>
       <div class="ba-card reveal">
         <div class="ba-pair">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Bathroom-mold.jpg/960px-Bathroom-mold.jpg" alt="Before: heavy mold growth on a bathroom ceiling" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1000&q=75" alt="After: bright, clean bathroom with healthy air" loading="lazy">
+          <img class="pos-top" src="assets/before-bath.jpg" alt="Before: mold colonies across a bathroom ceiling with damp staining" loading="lazy">
+          <img class="pos-top" src="assets/after-bath.jpg" alt="After: the same bathroom with a clean ceiling and healthy air" loading="lazy">
           <span class="ba-tag before">Before</span>
           <span class="ba-tag after">After</span>
           <span class="ba-arrow">→</span>
@@ -394,7 +396,7 @@
         <div class="cap">Bathroom — ceiling mold from poor ventilation<small>Source correction, remediation, and moisture control</small></div>
       </div>
     </div>
-    <p class="ba-note">Representative photos. Before images: <a href="https://commons.wikimedia.org/wiki/File:Black_mold_in_a_building.JPG" rel="nofollow">Wikimedia Commons</a> (<a href="https://commons.wikimedia.org/wiki/File:Bathroom-mold.jpg" rel="nofollow">CC BY-SA</a>).</p>
+    <p class="ba-note">Illustrative example — simulated imagery showing typical results.</p>
   </div>
 </section>
 
