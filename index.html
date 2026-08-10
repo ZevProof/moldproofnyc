@@ -97,8 +97,8 @@
   .hero-badge{
     position:absolute;left:-18px;bottom:26px;background:#fff;border-radius:12px;
     box-shadow:0 10px 30px rgba(31,58,99,.18);padding:14px 20px;display:flex;gap:12px;align-items:center;
+    border-left:3px solid var(--teal);
   }
-  .hero-badge .dot{width:42px;height:42px;border-radius:50%;background:var(--teal-pale);display:flex;align-items:center;justify-content:center;font-size:20px}
   .hero-badge b{display:block;font-size:14px;color:var(--navy)}
   .hero-badge small{font-size:12px;color:var(--gray)}
   @media(max-width:900px){
@@ -110,7 +110,6 @@
   .trust{background:var(--navy);color:#fff}
   .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding-top:26px;padding-bottom:26px}
   .trust-item{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;justify-content:center;text-align:left}
-  .trust-item .ic{font-size:22px}
   @media(max-width:800px){.trust-grid{grid-template-columns:1fr 1fr;gap:16px 8px}}
 
   /* ---------- SECTIONS ---------- */
@@ -127,11 +126,7 @@
     transition:box-shadow .25s,transform .25s,border-color .25s;
   }
   .svc:hover{box-shadow:0 14px 34px rgba(31,58,99,.10);transform:translateY(-3px);border-color:var(--teal)}
-  .svc .ic{
-    width:52px;height:52px;border-radius:12px;background:var(--teal-pale);
-    display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;
-  }
-  .svc h3{font-size:17.5px;font-weight:700;margin-bottom:8px}
+  .svc h3{font-size:17.5px;font-weight:700;margin-bottom:8px;padding-top:6px;border-top:3px solid var(--teal);display:inline-block}
   .svc p{font-size:14px;color:var(--gray)}
   @media(max-width:1000px){.svc-grid{grid-template-columns:1fr 1fr}.svc:last-child{grid-column:1/-1}}
   @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
@@ -214,8 +209,7 @@
 
   /* ---------- WHY ---------- */
   .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .why-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 26px}
-  .why-card .ic{font-size:26px;margin-bottom:14px}
+  .why-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 26px;border-left:3px solid var(--teal)}
   .why-card h3{font-size:16.5px;font-weight:700;margin-bottom:6px}
   .why-card p{font-size:14px;color:var(--gray)}
   @media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr}}
@@ -243,10 +237,7 @@
     border-radius:14px;padding:22px 26px;transition:box-shadow .2s,border-color .2s;
   }
   .c-card:hover{box-shadow:0 10px 28px rgba(31,58,99,.10);border-color:var(--teal)}
-  .c-card .ic{
-    width:52px;height:52px;border-radius:12px;background:var(--teal-pale);flex-shrink:0;
-    display:flex;align-items:center;justify-content:center;font-size:24px;
-  }
+  .c-card{border-left:3px solid var(--teal)}
   .c-card .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);font-weight:700}
   .c-card .v{font-size:19px;font-weight:800;color:var(--navy);word-break:break-word}
   @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:36px}}
@@ -269,7 +260,7 @@
 <div class="topbar">
   <div class="wrap">
     <span class="hours">Serving all five boroughs of New York City</span>
-    <a href="tel:+19293442861">📞 (929) 344-2861</a>
+    <a href="tel:+19293442861">(929) 344-2861</a>
   </div>
 </div>
 
@@ -302,7 +293,7 @@
       <h1>Fast, professional <span class="hl">mold assessment &amp; remediation</span> across NYC.</h1>
       <p class="lede">From first inspection to final clearance — one full-service team for property managers, landlords, homeowners, and commercial properties in all five boroughs.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="tel:+19293442861">Get a Fast Assessment</a>
+        <a class="btn btn-primary" href="tel:+19293442861">Get a Quote</a>
         <a class="btn btn-outline" href="#services">Our Services</a>
       </div>
       <div class="hero-checks">
@@ -314,7 +305,6 @@
     <div class="hero-photo reveal">
       <img src="assets/technician.jpg" alt="Mold Proof NYC certified technician in protective gear performing mold remediation">
       <div class="hero-badge">
-        <div class="dot">🛡️</div>
         <div><b>Certified Remediation</b><small>Full PPE &amp; containment on every job</small></div>
       </div>
     </div>
@@ -324,10 +314,10 @@
 <!-- TRUST BAR -->
 <section class="trust">
   <div class="wrap trust-grid">
-    <div class="trust-item"><span class="ic">⚡</span> Fast response times</div>
-    <div class="trust-item"><span class="ic">📋</span> HPD Order № 550 monitoring</div>
-    <div class="trust-item"><span class="ic">🏢</span> All five boroughs</div>
-    <div class="trust-item"><span class="ic">🛡️</span> Licensed &amp; insured</div>
+    <div class="trust-item">Fast response times</div>
+    <div class="trust-item">HPD Order № 550 monitoring</div>
+    <div class="trust-item">All five boroughs</div>
+    <div class="trust-item">Licensed &amp; insured</div>
   </div>
 </section>
 
@@ -340,11 +330,11 @@
       <p>Every service a New York property needs — assessment, remediation, and the HPD paperwork in between.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc reveal"><div class="ic">🔍</div><h3>Mold Assessments</h3><p>Thorough inspections that identify the source, scope, and severity of mold conditions.</p></div>
-      <div class="svc reveal"><div class="ic">🧹</div><h3>Mold Remediation</h3><p>Complete removal performed to spec — containment, treatment, and final clearance.</p></div>
-      <div class="svc reveal"><div class="ic">🏛️</div><h3>HPD Mold Violation Removal</h3><p>Swift correction of HPD mold violations so your property returns to compliance.</p></div>
-      <div class="svc reveal"><div class="ic">👁️</div><h3>HPD Order 550 Monitoring</h3><p>Continuous monitoring of Order № 550 violations across your portfolio.</p></div>
-      <div class="svc reveal"><div class="ic">📄</div><h3>HPD Paperwork &amp; Filing</h3><p>We prepare and file the violation paperwork, correctly and on time.</p></div>
+      <div class="svc reveal"><h3>Mold Assessments</h3><p>Thorough inspections that identify the source, scope, and severity of mold conditions.</p></div>
+      <div class="svc reveal"><h3>Air Quality Testing</h3><p>Indoor air sampling that detects elevated spore levels before they become a health problem.</p></div>
+      <div class="svc reveal"><h3>Mold Remediation</h3><p>Complete removal performed to spec — containment, treatment, and final clearance.</p></div>
+      <div class="svc reveal"><h3>Post-Remediation Clearance</h3><p>Clearance testing that verifies the space is clean, safe, and ready for reoccupancy.</p></div>
+      <div class="svc reveal"><h3>HPD Mold Violation Removal</h3><p>Swift correction of HPD mold violations so your property returns to compliance.</p></div>
     </div>
   </div>
 </section>
@@ -444,12 +434,12 @@
       <h2>Built for New York properties</h2>
     </div>
     <div class="why-grid">
-      <div class="why-card reveal"><div class="ic">⚡</div><h3>Fast Response Times</h3><p>Urgency is the job. We respond quickly and keep momentum through clearance.</p></div>
-      <div class="why-card reveal"><div class="ic">🛡️</div><h3>Licensed &amp; Insured</h3><p>Fully licensed and insured for assessment and remediation work in New York.</p></div>
-      <div class="why-card reveal"><div class="ic">🏛️</div><h3>NYC HPD Expertise</h3><p>Deep experience with HPD requirements, deadlines, and filing procedures.</p></div>
-      <div class="why-card reveal"><div class="ic">🔄</div><h3>End-to-End Service</h3><p>Assessment through remediation with one accountable team.</p></div>
-      <div class="why-card reveal"><div class="ic">👁️</div><h3>Daily № 550 Monitoring</h3><p>Your portfolio is watched every day, so nothing slips past a deadline.</p></div>
-      <div class="why-card reveal"><div class="ic">💬</div><h3>Clear Communication</h3><p>Professional reporting and documentation at every step of the job.</p></div>
+      <div class="why-card reveal"><h3>Fast Response Times</h3><p>Urgency is the job. We respond quickly and keep momentum through clearance.</p></div>
+      <div class="why-card reveal"><h3>Licensed &amp; Insured</h3><p>Fully licensed and insured for assessment and remediation work in New York.</p></div>
+      <div class="why-card reveal"><h3>NYC HPD Expertise</h3><p>Deep experience with HPD requirements, deadlines, and filing procedures.</p></div>
+      <div class="why-card reveal"><h3>End-to-End Service</h3><p>Assessment through remediation with one accountable team.</p></div>
+      <div class="why-card reveal"><h3>Daily № 550 Monitoring</h3><p>Your portfolio is watched every day, so nothing slips past a deadline.</p></div>
+      <div class="why-card reveal"><h3>Clear Communication</h3><p>Professional reporting and documentation at every step of the job.</p></div>
     </div>
   </div>
 </section>
@@ -479,15 +469,12 @@
     </div>
     <div class="c-cards reveal">
       <a class="c-card" href="tel:+19293442861">
-        <div class="ic">📞</div>
         <div><div class="k">Phone</div><div class="v">(929) 344-2861</div></div>
       </a>
       <a class="c-card" href="mailto:zev@moldproofnyc.com">
-        <div class="ic">✉️</div>
         <div><div class="k">Email</div><div class="v">zev@moldproofnyc.com</div></div>
       </a>
       <div class="c-card">
-        <div class="ic">🏙️</div>
         <div><div class="k">Service Area</div><div class="v">All Five Boroughs of NYC</div></div>
       </div>
     </div>
