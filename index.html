@@ -120,6 +120,24 @@
     .hero-badge{left:12px}
   }
 
+  /* ---------- STATS BAND ---------- */
+  .stats-band{background:#fff;border-bottom:1px solid var(--line)}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:36px;padding-bottom:36px}
+  .stat-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;padding:26px 20px;text-align:center}
+  .stat-card .num{font-size:30px;font-weight:800;color:var(--navy);line-height:1.1;letter-spacing:-.02em}
+  .stat-card .lbl{font-size:13px;color:var(--gray);font-weight:600;margin-top:6px}
+  @media(max-width:640px){.stats-grid{grid-template-columns:1fr 1fr;gap:14px}}
+
+  /* ---------- WHATSAPP ---------- */
+  .btn-wa{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    background:#25d366;color:#fff;font-weight:700;font-size:16px;
+    border-radius:14px;padding:18px 26px;transition:background .2s,transform .2s;
+    box-shadow:0 4px 16px rgba(37,211,102,.32);
+  }
+  .btn-wa:hover{background:#1ebe5b;transform:translateY(-1px)}
+  .btn-wa svg{width:24px;height:24px;fill:#fff;flex-shrink:0}
+
   /* ---------- SECTIONS ---------- */
   .section{padding:96px 0}
   .section.alt{background:var(--bg-soft)}
@@ -218,6 +236,30 @@
   .c-card{border-left:3px solid var(--teal)}
   .c-card .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);font-weight:700}
   .c-card .v{font-size:19px;font-weight:800;color:var(--navy);word-break:break-word}
+  #contact{scroll-margin-top:88px}
+  .contact-left{display:flex;flex-direction:column;gap:18px}
+  .hours-block{background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;padding:20px 22px;border-left:3px solid var(--teal)}
+  .hours-block h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-dark);font-weight:700;margin-bottom:6px}
+  .hours-row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+  .hours-row:last-child{border-bottom:none}
+  .hours-row .d{color:var(--gray);font-weight:600}
+  .hours-row .t{color:var(--navy);font-weight:700;text-align:right}
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px;box-shadow:0 12px 34px rgba(31,58,99,.10)}
+  .form-card h3{font-size:23px;margin-bottom:20px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:7px}
+  .field input,.field textarea{
+    width:100%;border:1px solid var(--line);border-radius:9px;padding:13px 14px;
+    font:inherit;font-size:15px;color:var(--ink);background:var(--bg-soft);
+    transition:border-color .2s,box-shadow .2s;
+  }
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(95,168,160,.18);background:#fff}
+  .field textarea{resize:vertical;min-height:120px}
+  .form-card .btn-primary{width:100%;border:none;cursor:pointer;font:inherit;font-weight:700;font-size:16px}
+  .form-msg{margin-top:14px;font-size:14px;font-weight:600;display:none}
+  .form-msg.show{display:block}
+  .form-msg.ok{color:var(--teal-dark)}
+  .form-msg.err{color:#b3453a}
   @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:36px}}
 
   /* ---------- FOOTER ---------- */
@@ -281,7 +323,7 @@
       <h1>Fast, professional <span class="hl">mold assessment &amp; remediation</span> across NYC.</h1>
       <p class="lede">From first inspection to final clearance — one full-service team for property managers, landlords, homeowners, and commercial properties in all five boroughs.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="tel:+19293442861">Get a Quote</a>
+        <a class="btn btn-primary" href="#contact">Get a Quote</a>
         <a class="btn btn-outline" href="#services">Our Services</a>
       </div>
       <div class="hero-checks">
@@ -298,6 +340,16 @@
     </div>
   </div>
 </header>
+
+<!-- STATS -->
+<section class="stats-band">
+  <div class="wrap stats-grid">
+    <div class="stat-card reveal"><div class="num">Licensed</div><div class="lbl">NYS Certified</div></div>
+    <div class="stat-card reveal"><div class="num">Insured</div><div class="lbl">Full Coverage</div></div>
+    <div class="stat-card reveal"><div class="num">300+</div><div class="lbl">Homes Inspected</div></div>
+    <div class="stat-card reveal"><div class="num">5&#9733;</div><div class="lbl">Client Rating</div></div>
+  </div>
+</section>
 
 <!-- BOROUGHS -->
 <section class="boro-band" id="service-area">
@@ -407,21 +459,56 @@
 <!-- CONTACT -->
 <section class="section" id="contact">
   <div class="wrap contact-grid contact">
-    <div class="reveal">
-      <span class="eyebrow">Contact</span>
-      <h2>Get ahead of it today.</h2>
-      <p class="big">Call or email for a fast, professional assessment — from first inspection to final clearance.</p>
-    </div>
-    <div class="c-cards reveal">
+    <div class="contact-left reveal">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h2>Get ahead of it today.</h2>
+        <p class="big">Call, message, or send us a note for a fast, professional assessment — from first inspection to final clearance.</p>
+      </div>
       <a class="c-card" href="tel:+19293442861">
         <div><div class="k">Phone</div><div class="v">(929) 344-2861</div></div>
       </a>
       <a class="c-card" href="mailto:zev@moldproofnyc.com">
         <div><div class="k">Email</div><div class="v">zev@moldproofnyc.com</div></div>
       </a>
-      <div class="c-card">
-        <div><div class="k">Service Area</div><div class="v">All Five Boroughs of NYC</div></div>
+      <a class="btn-wa" href="https://wa.me/19293442861?text=Hi%2C%20I%27d%20like%20a%20mold%20assessment%20quote." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.2 4.79 1.2h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.15-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.19 0 .39.01.56.01.18.01.42-.07.66.5.24.59.83 2.04.9 2.19.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.38-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.69-.8.87-1.08.18-.28.36-.23.61-.14.25.09 1.6.75 1.87.89.27.14.46.21.53.32.07.12.07.68-.17 1.36z"/></svg>
+        Chat with us
+      </a>
+      <div class="hours-block">
+        <h4>Business Hours</h4>
+        <div class="hours-row"><span class="d">Mon – Thu</span><span class="t">8:00 AM – 6:00 PM</span></div>
+        <div class="hours-row"><span class="d">Friday</span><span class="t">8:00 AM – 12:00 PM</span></div>
+        <div class="hours-row"><span class="d">Saturday</span><span class="t">Closed</span></div>
+        <div class="hours-row"><span class="d">Sunday</span><span class="t">Emergency Only</span></div>
       </div>
+    </div>
+
+    <div class="form-card reveal">
+      <h3>Send Us a Message</h3>
+      <form id="contact-form">
+        <div class="field">
+          <label for="cf-name">Full Name *</label>
+          <input id="cf-name" type="text" name="name" placeholder="John Doe" required>
+        </div>
+        <div class="field">
+          <label for="cf-email">Email Address *</label>
+          <input id="cf-email" type="email" name="email" placeholder="john@example.com" required>
+        </div>
+        <div class="field">
+          <label for="cf-phone">Phone Number *</label>
+          <input id="cf-phone" type="tel" name="phone" placeholder="(929) 344-2861" required>
+        </div>
+        <div class="field">
+          <label for="cf-message">Message *</label>
+          <textarea id="cf-message" name="message" placeholder="Tell us about your mold or air quality concerns…" required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="New quote request — Mold Proof NYC website">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p class="form-msg" id="form-msg"></p>
+      </form>
     </div>
   </div>
 </section>
@@ -450,6 +537,38 @@
     });
     document.addEventListener('click', e => { if (!hd.contains(e.target)) hd.classList.remove('open'); });
     hd.querySelectorAll('.drop a').forEach(a => a.addEventListener('click', () => hd.classList.remove('open')));
+  }
+
+  // Contact form → FormSubmit (no backend needed)
+  const form = document.getElementById('contact-form');
+  if (form) {
+    const msg = document.getElementById('form-msg');
+    const btn = form.querySelector('button[type="submit"]');
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      if (form._honey && form._honey.value) return; // spam trap
+      btn.disabled = true;
+      const label = btn.textContent;
+      btn.textContent = 'Sending…';
+      msg.className = 'form-msg';
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/zev@moldproofnyc.com', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form)))
+        });
+        if (!res.ok) throw new Error('bad response');
+        form.reset();
+        msg.textContent = 'Thank you — your message was sent. We’ll get back to you shortly.';
+        msg.classList.add('show', 'ok');
+      } catch (err) {
+        msg.textContent = 'Something went wrong. Please call (929) 344-2861 or email us directly.';
+        msg.classList.add('show', 'err');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = label;
+      }
+    });
   }
 </script>
 </body>
