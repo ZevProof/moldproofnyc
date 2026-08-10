@@ -58,16 +58,30 @@
   .brand .name{font-weight:800;font-size:19px;color:var(--navy);letter-spacing:-.01em;line-height:1.2}
   .brand .name span{color:var(--teal-dark)}
   .brand .tag{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);font-weight:600}
-  .nav-links{display:flex;gap:30px;font-size:14px;font-weight:600}
-  .nav-links a{color:var(--ink);transition:color .2s}
+  .nav-links{display:flex;gap:26px;font-size:14px;font-weight:600}
+  .nav-links a{color:var(--ink);transition:color .2s;white-space:nowrap}
   .nav-links a:hover{color:var(--teal-dark)}
+  .has-drop{position:relative}
+  .has-drop > a::after{
+    content:"";display:inline-block;margin-left:7px;vertical-align:2px;
+    width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+    transform:rotate(45deg);
+  }
+  .drop{position:absolute;top:100%;left:-14px;padding-top:12px;display:none;z-index:110}
+  .has-drop:hover .drop,.has-drop:focus-within .drop,.has-drop.open .drop{display:block}
+  .drop-inner{
+    background:#fff;border:1px solid var(--line);border-radius:12px;min-width:250px;
+    box-shadow:0 16px 40px rgba(31,58,99,.16);padding:8px;
+  }
+  .drop-inner a{display:block;padding:11px 14px;border-radius:8px;font-size:13.5px;color:var(--ink)}
+  .drop-inner a:hover{background:var(--teal-pale);color:var(--teal-dark)}
   .nav-call{
     background:var(--teal);color:#fff;font-weight:700;font-size:14.5px;
     padding:12px 22px;border-radius:8px;white-space:nowrap;
     transition:background .2s;box-shadow:0 2px 10px rgba(95,168,160,.35);
   }
   .nav-call:hover{background:var(--teal-dark)}
-  @media(max-width:900px){.nav-links{display:none}}
+  @media(max-width:1120px){.nav-links{display:none}}
   @media(max-width:520px){
     .brand img{width:44px;height:44px}
     .brand .name{font-size:16px}
@@ -106,12 +120,6 @@
     .hero-badge{left:12px}
   }
 
-  /* ---------- TRUST BAR ---------- */
-  .trust{background:var(--navy);color:#fff}
-  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding-top:26px;padding-bottom:26px}
-  .trust-item{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;justify-content:center;text-align:left}
-  @media(max-width:800px){.trust-grid{grid-template-columns:1fr 1fr;gap:16px 8px}}
-
   /* ---------- SECTIONS ---------- */
   .section{padding:96px 0}
   .section.alt{background:var(--bg-soft)}
@@ -126,6 +134,7 @@
     transition:box-shadow .25s,transform .25s,border-color .25s;
   }
   .svc:hover{box-shadow:0 14px 34px rgba(31,58,99,.10);transform:translateY(-3px);border-color:var(--teal)}
+  .svc{scroll-margin-top:110px}
   .svc h3{font-size:17.5px;font-weight:700;margin-bottom:8px;padding-top:6px;border-top:3px solid var(--teal);display:inline-block}
   .svc p{font-size:14px;color:var(--gray)}
   @media(max-width:1000px){.svc-grid{grid-template-columns:1fr 1fr}.svc:last-child{grid-column:1/-1}}
@@ -274,7 +283,18 @@
       </span>
     </a>
     <div class="nav-links">
-      <a href="#services">Services</a>
+      <div class="has-drop">
+        <a href="#services">Services</a>
+        <div class="drop">
+          <div class="drop-inner">
+            <a href="#svc-assessments">Mold Assessments</a>
+            <a href="#svc-air">Air Quality Testing</a>
+            <a href="#svc-remediation">Mold Remediation</a>
+            <a href="#svc-clearance">Post-Remediation Clearance</a>
+            <a href="#svc-hpd">HPD Mold Violation Removal</a>
+          </div>
+        </div>
+      </div>
       <a href="#process">Our Process</a>
       <a href="#results">Before &amp; After</a>
       <a href="#hpd">HPD Compliance</a>
@@ -305,19 +325,24 @@
     <div class="hero-photo reveal">
       <img src="assets/technician.jpg" alt="Mold Proof NYC certified technician in protective gear performing mold remediation">
       <div class="hero-badge">
-        <div><b>Certified Remediation</b><small>Full PPE &amp; containment on every job</small></div>
+        <div><b>Certified Remediation</b></div>
       </div>
     </div>
   </div>
 </header>
 
-<!-- TRUST BAR -->
-<section class="trust">
-  <div class="wrap trust-grid">
-    <div class="trust-item">Fast response times</div>
-    <div class="trust-item">HPD Order № 550 monitoring</div>
-    <div class="trust-item">All five boroughs</div>
-    <div class="trust-item">Licensed &amp; insured</div>
+<!-- BOROUGHS -->
+<section class="boro-band" id="service-area">
+  <div class="wrap boro-inner">
+    <h2>Serving all five boroughs</h2>
+    <p>Wherever your property stands, we're already working nearby.</p>
+    <div class="boro-chips reveal">
+      <span class="chip">Manhattan</span>
+      <span class="chip">Brooklyn</span>
+      <span class="chip">Queens</span>
+      <span class="chip">The Bronx</span>
+      <span class="chip">Staten Island</span>
+    </div>
   </div>
 </section>
 
@@ -327,14 +352,14 @@
     <div class="section-head reveal">
       <span class="eyebrow">What We Do</span>
       <h2>A complete mold solution</h2>
-      <p>Every service a New York property needs — assessment, remediation, and the HPD paperwork in between.</p>
+      <p>Every service a New York property needs.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc reveal"><h3>Mold Assessments</h3><p>Thorough inspections that identify the source, scope, and severity of mold conditions.</p></div>
-      <div class="svc reveal"><h3>Air Quality Testing</h3><p>Indoor air sampling that detects elevated spore levels before they become a health problem.</p></div>
-      <div class="svc reveal"><h3>Mold Remediation</h3><p>Complete removal performed to spec — containment, treatment, and final clearance.</p></div>
-      <div class="svc reveal"><h3>Post-Remediation Clearance</h3><p>Clearance testing that verifies the space is clean, safe, and ready for reoccupancy.</p></div>
-      <div class="svc reveal"><h3>HPD Mold Violation Removal</h3><p>Swift correction of HPD mold violations so your property returns to compliance.</p></div>
+      <div class="svc reveal" id="svc-assessments"><h3>Mold Assessments</h3><p>Thorough inspections that identify the source, scope, and severity of mold conditions.</p></div>
+      <div class="svc reveal" id="svc-air"><h3>Air Quality Testing</h3><p>Indoor air sampling that detects elevated spore levels before they become a health problem.</p></div>
+      <div class="svc reveal" id="svc-remediation"><h3>Mold Remediation</h3><p>Complete removal performed to spec — containment, treatment, and final clearance.</p></div>
+      <div class="svc reveal" id="svc-clearance"><h3>Post-Remediation Clearance</h3><p>Clearance testing that verifies the space is clean, safe, and ready for reoccupancy.</p></div>
+      <div class="svc reveal" id="svc-hpd"><h3>HPD Mold Violation Removal</h3><p>Swift correction of HPD mold violations so your property returns to compliance.</p></div>
     </div>
   </div>
 </section>
@@ -444,21 +469,6 @@
   </div>
 </section>
 
-<!-- BOROUGHS -->
-<section class="boro-band" id="service-area">
-  <div class="wrap boro-inner">
-    <h2>Serving all five boroughs</h2>
-    <p>Wherever your property stands, we're already working nearby.</p>
-    <div class="boro-chips reveal">
-      <span class="chip">Manhattan</span>
-      <span class="chip">Brooklyn</span>
-      <span class="chip">Queens</span>
-      <span class="chip">The Bronx</span>
-      <span class="chip">Staten Island</span>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section class="section" id="contact">
   <div class="wrap contact-grid contact">
@@ -496,6 +506,16 @@
     for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   }, {threshold:.12});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Services dropdown: click toggles (hover handled by CSS)
+  const hd = document.querySelector('.has-drop');
+  if (hd) {
+    hd.querySelector('a').addEventListener('click', e => {
+      if (!hd.classList.contains('open')) { e.preventDefault(); hd.classList.add('open'); }
+    });
+    document.addEventListener('click', e => { if (!hd.contains(e.target)) hd.classList.remove('open'); });
+    hd.querySelectorAll('.drop a').forEach(a => a.addEventListener('click', () => hd.classList.remove('open')));
+  }
 
   // Before/after comparison sliders
   document.querySelectorAll('.cmp').forEach(cmp => {
